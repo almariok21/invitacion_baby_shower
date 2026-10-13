@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Baby Shower - Enzo Almario Riaño</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Quicksand:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Quicksand', sans-serif;
+            background: linear-gradient(180deg, #cfe8f7 0%, #e8f4f8 45%, #fef3f6 100%);
+            min-height: 100vh;
+        }
+        .font-cursive { font-family: 'Great Vibes', cursive; }
+        .card-shadow {
+            box-shadow: 0 20px 40px -15px rgba(244, 114, 182, 0.18), 0 10px 20px -5px rgba(56, 189, 248, 0.12);
+        }
+        .floating-element { animation: float 6s ease-in-out infinite; }
+        .pulse-soft { animation: pulseSoft 3s ease-in-out infinite; }
+        @keyframes float {
+            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            50% { transform: translateY(-10px) rotate(3deg); }
+        }
+        @keyframes pulseSoft {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.03); }
+        }
+        /* Fondo interactivo */
+        #bg {
+            position: fixed;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 0;
+            touch-action: manipulation;
+        }
+        main, #pop-hint { position: relative; z-index: 10; }
+        #pop-hint {
+            position: fixed;
+            bottom: 12px;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 20;
+            font-size: 12px;
+            font-weight: 600;
+            color: #475569;
+            background: rgba(255,255,255,.85);
+            padding: 6px 14px;
+            border-radius: 999px;
+            pointer-events: none;
+            transition: opacity .8s;
+        }
+        @media (prefers-reduced-motion: reduce) {
+            .floating-element, .pulse-soft { animation: none; }
+        }
+    </style>
+</head>
+<body class="flex items-center justify-center p-4 sm:p-6 md:p-10 min-h-screen">
+
+    <canvas id="bg" aria-hidden="true"></canvas>
+    <div id="pop-hint">Toca las cigüeñas y mira qué pasa 🍼</div>
+
+    <main class="w-full max-w-xl bg-white/95 backdrop-blur-md rounded-3xl card-shadow border border-blue-100/80 overflow-hidden relative transition-all">
+
+        <div class="bg-gradient-to-r from-blue-200 via-sky-200 to-amber-100 p-8 text-center relative overflow-hidden">
+            <div class="absolute -top-12 -left-12 w-36 h-36 bg-blue-300 rounded-full mix-blend-multiply filter blur-xl opacity-40"></div>
+            <div class="absolute -bottom-12 -right-12 w-36 h-36 bg-sky-300 rounded-full mix-blend-multiply filter blur-xl opacity-40"></div>
+
+            <span class="inline-block bg-white/90 text-blue-600 text-xs sm:text-sm font-bold tracking-widest uppercase px-5 py-2 rounded-full shadow-sm mb-3">
+                ¡Estás invitado a nuestro Baby Shower!
+                <br>
+            </span>
+            <br>
+            <br>
+            <h1 class="font-cursive text-5xl sm:text-7xl text-slate-700 font-bold drop-shadow-sm mb-1">
+                Baby Shower
+            </h1>
+            <br>
+            <p class="text-slate-600 font-medium text-lg sm:text-2xl mt-1">
+                Bebé <span class="text-blue-500 font-bold">Enzo Almario Riaño</span>
+            </p>
+        </div>
+
+        <div class="p-6 sm:p-10 space-y-8">
+            <div class="text-center space-y-3">
+                <div class="inline-flex items-center justify-center w-16 h-16 bg-blue-50 text-blue-400 rounded-full text-3xl mb-1 floating-element shadow-sm">
+                    <i class="fa-solid fa-baby-carriage"></i>
+                </div>
+                <h2 class="text-xl sm:text-2xl font-bold text-slate-700">¡Celebremos la llegada de Enzo!</h2>
+                <p class="text-slate-600 leading-relaxed max-w-md mx-auto text-sm sm:text-base">
+                    Con mucha ilusión y alegría, queremos reunir a nuestros seres más queridos para esperar la llegada de nuestro amado bebé. Tu compañía es el mejor regalo.
+                </p>
+                <div class="pt-1">
+                    <span class="text-xs uppercase tracking-wider text-slate-400 font-semibold block">Con la bendición de sus padres</span>
+                    <p class="text-sky-600 font-bold text-base sm:text-lg">
+                        Kevin Almario <span class="text-blue-400">&amp;</span> Lisette Riaño
+                    </p>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 bg-gradient-to-br from-blue-50/60 to-sky-50/60 p-5 rounded-2xl border border-blue-100/60">
+                <div class="flex items-center space-x-4 p-3.5 bg-white rounded-xl shadow-sm border border-slate-100">
+                    <div class="w-11 h-11 rounded-full bg-blue-100 text-blue-500 flex items-center justify-center shrink-0 text-lg">
+                        <i class="fa-regular fa-calendar-days"></i>
+                    </div>
+                    <div>
+                        <span class="block text-xs text-slate-400 uppercase font-semibold">Fecha</span>
+                        <span class="text-sm font-bold text-slate-700">10 de enero, 2027</span>
+                    </div>
+                </div>
+
+                <div class="flex items-center space-x-4 p-3.5 bg-white rounded-xl shadow-sm border border-slate-100">
+                    <div class="w-11 h-11 rounded-full bg-sky-100 text-sky-500 flex items-center justify-center shrink-0 text-lg">
+                        <i class="fa-regular fa-clock"></i>
+                    </div>
+                    <div>
+                        <span class="block text-xs text-slate-400 uppercase font-semibold">Hora</span>
+                        <span class="text-sm font-bold text-slate-700">6:00 PM</span>
+                    </div>
+                </div>
+
+                <div class="flex items-center space-x-4 p-3.5 bg-white rounded-xl shadow-sm border border-slate-100 sm:col-span-2">
+                    <div class="w-11 h-11 rounded-full bg-amber-100 text-amber-500 flex items-center justify-center shrink-0 text-lg">
+                        <i class="fa-solid fa-location-dot"></i>
+                    </div>
+                    <div>
+                        <span class="block text-xs text-slate-400 uppercase font-semibold">Lugar</span>
+                        <span class="text-sm font-bold text-slate-700">Hotel Movich</span>
+                        <span class="block text-xs text-slate-500">Calle 94 #51B-57, Barranquilla</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-gradient-to-r from-blue-50 via-slate-50 to-sky-50 p-6 rounded-2xl border border-slate-200/80 text-center space-y-4">
+                <div class="space-y-1">
+                    <h3 class="text-lg font-bold text-slate-700">¿Nos acompañas a celebrar?</h3>
+                    <p class="text-xs text-slate-500">Por favor confirma tu asistencia llenando nuestro formulario oficial:</p>
+                </div>
+
+                <a
+                    id="formsLinkBtn"
+                    href="https://forms.cloud.microsoft/r/Yb7gqBzgqw"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="pulse-soft inline-flex items-center justify-center w-full py-4 px-6 bg-gradient-to-r from-pink-400 via-rose-400 to-sky-400 hover:from-pink-500 hover:via-rose-500 hover:to-sky-500 text-white font-bold rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 space-x-3 group"
+                >
+                    <i class="fa-solid fa-clipboard text-xl group-hover:scale-110 transition-transform" aria-hidden="true"></i>
+                    <span class="text-base sm:text-lg">Confirmar Asistencia Aquí</span>
+                    <i class="fa-solid fa-arrow-right text-sm group-hover:translate-x-1 transition-transform" aria-hidden="true"></i>
+                </a>
+            </div>
+        </div>
+    </main>
+
+    <script>
+        // ENLACE AL FORMULARIO (Google Forms / Microsoft Forms)
+        const FORMS_URL = "https://forms.cloud.microsoft/r/Yb7gqBzgqw";
+        document.addEventListener('DOMContentLoaded', function () {
+            const btn = document.getElementById('formsLinkBtn');
+            if (btn && FORMS_URL) btn.href = FORMS_URL;
+        });
+
+        // ===== FONDO INTERACTIVO: cigüeñas con bebés, nubes y estrellas =====
+        (function () {
+            const cv = document.getElementById('bg');
+            const ctx = cv.getContext('2d');
+            const still = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+            const COLORS = ['#7dc4f0', '#a9d8f5', '#f9a8c9', '#fde28a', '#ffffff', '#b8e0d2'];
+            const BUNDLES = ['#7dc4f0', '#f9a8c9', '#fde28a', '#b8e0d2'];
+            let W, H, dpr, storks = [], clouds = [], stars = [], bits = [];
+            const mouse = { x: -999, y: -999 };
+            const rnd = (a, b) => a + Math.random() * (b - a);
+
+            function size() {
+                dpr = Math.min(window.devicePixelRatio || 1, 2);
+                W = innerWidth; H = innerHeight;
+                cv.width = W * dpr; cv.height = H * dpr;
+                ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+            }
+
+            function newStork(anywhere) {
+                const dir = Math.random() < 0.5 ? 1 : -1;
+                const s = rnd(0.8, 1.4) * (W < 600 ? 0.75 : 1);
+                return {
+                    dir, s, x: anywhere ? rnd(0, W) : (dir > 0 ? -90 * s : W + 90 * s),
+                    base: rnd(50, H - 120), vx: rnd(0.35, 0.8), ph: rnd(0, 6.28),
+                    c: BUNDLES[(Math.random() * BUNDLES.length) | 0], push: 0, boost: 0, hx: 0, hy: 0
+                };
+            }
+            function init() {
+                size();
+                const n = Math.max(3, Math.min(7, (W / 220) | 0));
+                storks = Array.from({ length: n }, () => newStork(true));
+                clouds = Array.from({ length: 5 }, () => ({ x: rnd(0, W), y: rnd(20, H * 0.6), s: rnd(0.8, 1.6), v: rnd(0.08, 0.25) }));
+                stars = Array.from({ length: 45 }, () => ({ x: rnd(0, W), y: rnd(0, H), r: rnd(1, 2.6), ph: rnd(0, 6.28) }));
+            }
+
+            function burst(x, y, color, n) {
+                for (let i = 0; i < n; i++) {
+                    const a = rnd(0, 6.28), s = rnd(1.5, 5);
+                    bits.push({ x, y, vx: Math.cos(a) * s, vy: Math.sin(a) * s - 1.5, life: 1,
+                        c: Math.random() < 0.5 ? color : COLORS[(Math.random() * COLORS.length) | 0],
+                        w: rnd(4, 8), rot: rnd(0, 6.28), heart: Math.random() < 0.4 });
+                }
+            }
+
+            function drawCloud(c) {
+                ctx.fillStyle = 'rgba(255,255,255,.7)';
+                ctx.beginPath();
+                [[0, 0, 28], [26, -10, 34], [58, 0, 28], [30, 8, 30]].forEach(p => {
+                    ctx.moveTo(c.x + p[0] * c.s + p[2] * c.s, c.y + p[1] * c.s);
+                    ctx.arc(c.x + p[0] * c.s, c.y + p[1] * c.s, p[2] * c.s, 0, 6.28);
+                });
+                ctx.fill();
+            }
+
+            function wing(f, shade) {
+                ctx.save();
+                ctx.translate(-2, -6);
+                ctx.rotate(-0.2 - f * 0.6);
+                ctx.fillStyle = shade;
+                ctx.beginPath();
+                ctx.moveTo(-14, 0);
+                ctx.quadraticCurveTo(-6, -36, 16, -32);
+                ctx.quadraticCurveTo(8, -14, 16, 0);
+                ctx.closePath();
+                ctx.fill();
+                ctx.fillStyle = '#475569';
+                ctx.beginPath();
+                ctx.moveTo(2, -30);
+                ctx.quadraticCurveTo(10, -33, 16, -32);
+                ctx.quadraticCurveTo(12, -22, 13, -16);
+                ctx.quadraticCurveTo(6, -22, 2, -30);
+                ctx.fill();
+                ctx.restore();
+            }
+
+            function drawStork(b, t) {
+                const f = still ? 0.3 : Math.sin(t * 4.5 + b.ph);
+                const y = b.base + (still ? 0 : Math.sin(t * 0.8 + b.ph) * 12) + b.push;
+                b.hx = b.x + b.dir * 22 * b.s; b.hy = y + 8 * b.s;
+                ctx.save();
+                ctx.translate(b.x, y);
+                ctx.scale(b.dir * b.s, b.s);
+                // ala lejana
+                wing(-f, '#dbeafe');
+                // patas
+                ctx.strokeStyle = '#f87171'; ctx.lineWidth = 2; ctx.lineCap = 'round';
+                ctx.beginPath();
+                ctx.moveTo(-20, 4); ctx.lineTo(-48, 9);
+                ctx.moveTo(-18, 6); ctx.lineTo(-46, 13);
+                ctx.stroke();
+                // cola
+                ctx.fillStyle = '#475569';
+                ctx.beginPath(); ctx.moveTo(-22, -3); ctx.lineTo(-38, 0); ctx.lineTo(-22, 5); ctx.fill();
+                // cuerpo
+                ctx.fillStyle = '#ffffff';
+                ctx.beginPath(); ctx.ellipse(0, 0, 26, 10, 0, 0, 6.28); ctx.fill();
+                // cuello y cabeza
+                ctx.strokeStyle = '#ffffff'; ctx.lineWidth = 6;
+                ctx.beginPath(); ctx.moveTo(18, -3); ctx.quadraticCurveTo(32, -4, 35, -11); ctx.stroke();
+                ctx.beginPath(); ctx.arc(36, -12, 5.5, 0, 6.28); ctx.fillStyle = '#fff'; ctx.fill();
+                ctx.fillStyle = '#1e293b'; ctx.beginPath(); ctx.arc(37.5, -13, 1.2, 0, 6.28); ctx.fill();
+                // pico
+                ctx.fillStyle = '#fb923c';
+                ctx.beginPath(); ctx.moveTo(40, -14); ctx.lineTo(64, -6); ctx.lineTo(40, -9); ctx.fill();
+                // bebé en el atado
+                ctx.save();
+                ctx.translate(62, -6);
+                ctx.rotate(still ? 0 : Math.sin(t * 2 + b.ph) * 0.12);
+                ctx.strokeStyle = b.c; ctx.lineWidth = 2;
+                ctx.beginPath(); ctx.moveTo(0, 0); ctx.lineTo(-6, 22); ctx.moveTo(0, 0); ctx.lineTo(6, 22); ctx.stroke();
+                ctx.fillStyle = b.c;
+                ctx.beginPath(); ctx.ellipse(0, 34, 12, 15, 0, 0, 6.28); ctx.fill();
+                ctx.beginPath(); ctx.arc(0, 21, 3.5, 0, 6.28); ctx.fill();
+                ctx.fillStyle = '#fde7d3';
+                ctx.beginPath(); ctx.arc(0, 29, 6, 0, 6.28); ctx.fill();
+                ctx.fillStyle = '#1e293b';
+                ctx.beginPath(); ctx.arc(-2, 29, 0.9, 0, 6.28); ctx.arc(2, 29, 0.9, 0, 6.28); ctx.fill();
+                ctx.strokeStyle = 'rgba(255,255,255,.7)'; ctx.lineWidth = 1.2;
+                ctx.beginPath(); ctx.moveTo(-9, 37); ctx.quadraticCurveTo(0, 42, 9, 37); ctx.stroke();
+                ctx.restore();
+                // ala cercana
+                wing(f, '#ffffff');
+                ctx.restore();
+            }
+
+            let last = 0;
+            function frame(ms) {
+                const t = ms / 1000, k = still ? 0 : Math.min((ms - last) / 16.7 || 1, 3);
+                last = ms;
+                ctx.clearRect(0, 0, W, H);
+
+                stars.forEach(s => {
+                    const a = still ? 0.6 : 0.35 + 0.5 * Math.abs(Math.sin(t * 1.2 + s.ph));
+                    ctx.fillStyle = 'rgba(255,255,255,' + a + ')';
+                    ctx.beginPath(); ctx.arc(s.x, s.y, s.r, 0, 6.28); ctx.fill();
+                });
+                clouds.forEach(c => { c.x += c.v * k; if (c.x > W + 120) c.x = -160; drawCloud(c); });
+
+                storks.forEach((b, i) => {
+                    b.x += b.dir * b.vx * (1 + b.boost * 3) * k;
+                    b.boost *= 0.97;
+                    // el cursor o el dedo hacen que la cigüeña esquive hacia arriba o abajo
+                    const dx = b.hx - mouse.x, dy = b.hy - mouse.y, d = Math.hypot(dx, dy);
+                    if (!still && d < 120) b.push += (dy >= 0 ? 1 : -1) * (120 - d) * 0.03;
+                    b.push *= 0.96;
+                    if ((b.dir > 0 && b.x > W + 100 * b.s) || (b.dir < 0 && b.x < -100 * b.s)) storks[i] = newStork(false);
+                    drawStork(b, t);
+                });
+
+                bits = bits.filter(p => p.life > 0);
+                bits.forEach(p => {
+                    const kk = k || 1;
+                    p.x += p.vx * kk; p.y += p.vy * kk; p.vy += 0.12 * kk;
+                    p.rot += 0.15; p.life -= 0.016 * kk;
+                    ctx.save();
+                    ctx.globalAlpha = Math.max(p.life, 0);
+                    ctx.translate(p.x, p.y); ctx.rotate(p.rot);
+                    ctx.fillStyle = p.c;
+                    if (p.heart) { ctx.font = p.w * 2.2 + 'px sans-serif'; ctx.fillText('♥', -p.w, p.w); }
+                    else ctx.fillRect(-p.w / 2, -p.w / 4, p.w, p.w / 2);
+                    ctx.restore();
+                });
+                requestAnimationFrame(frame);
+            }
+
+            function tap(x, y) {
+                for (let i = storks.length - 1; i >= 0; i--) {
+                    const b = storks[i];
+                    if (Math.hypot(x - b.hx, y - b.hy) <= 48 * b.s) {
+                        burst(b.hx, b.hy, b.c, 26);
+                        b.boost = 1;
+                        return;
+                    }
+                }
+                burst(x, y, '#f9a8c9', 8);
+            }
+
+            addEventListener('pointermove', e => { mouse.x = e.clientX; mouse.y = e.clientY; });
+            addEventListener('pointerleave', () => { mouse.x = mouse.y = -999; });
+            addEventListener('pointerdown', e => {
+                mouse.x = e.clientX; mouse.y = e.clientY;
+                if (e.target.closest('a, button')) return;
+                tap(e.clientX, e.clientY);
+                const h = document.getElementById('pop-hint');
+                if (h) h.style.opacity = 0;
+            });
+            addEventListener('resize', init);
+
+            init();
+            requestAnimationFrame(frame);
+            setTimeout(() => { const h = document.getElementById('pop-hint'); if (h) h.style.opacity = 0; }, 9000);
+        })();
+    </script>
+</body>
+</html>
